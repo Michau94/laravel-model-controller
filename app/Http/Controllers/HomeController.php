@@ -13,4 +13,12 @@ class HomeController extends Controller
         $movies = Movie::all();
         return view('home', compact('movies'));
     }
+
+    public function show($id)
+    {
+
+        $movie = Movie::findOrFail($id);
+
+        return view('show', compact('movie'));
+    }
 }
